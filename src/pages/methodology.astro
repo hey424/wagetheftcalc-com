@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Calculator Methodology | wagetheftcalc.com';
+const description = 'How the wage theft calculator estimates unpaid wages and liquidated damages under the FLSA.';
+---
+<BaseLayout title={title} description={description}>
+  <h1>Calculator Methodology</h1>
+
+  <h2>Unpaid Wage Calculation</h2>
+  <p>We multiply weekly unpaid hours by the applicable rate for the violation type:</p>
+  <ul>
+    <li><strong>Overtime:</strong> Regular rate × 1.5 (FLSA requires time-and-a-half for hours over 40/week)</li>
+    <li><strong>Minimum wage:</strong> Difference between $7.25/hr and actual rate paid (federal floor — state minimums vary)</li>
+    <li><strong>Off-the-clock:</strong> Regular hourly rate (at minimum; OT rate if total hours exceed 40)</li>
+    <li><strong>Tip theft:</strong> Estimated at regular rate as a floor</li>
+    <li><strong>Misclassification:</strong> Estimated at OT rate for missed overtime</li>
+  </ul>
+  <p>Weekly shortfall is multiplied by the number of weeks in the lookback period.</p>
+
+  <h2>Liquidated Damages</h2>
+  <p>The FLSA defaults to liquidated damages equal to the unpaid wages (2× total). We apply this unless a state law enhancement is selected:</p>
+  <ul>
+    <li>FLSA default: 2× unpaid wages</li>
+    <li>Double damages states (CA, NY, IL): 2× unpaid wages</li>
+    <li>Triple damages states (MA): 3× unpaid wages</li>
+  </ul>
+
+  <h2>Limitations</h2>
+  <p>This calculator does not account for: interest, attorney fees (recoverable under FLSA), state-specific minimum wages higher than $7.25, complex OT calculations for fluctuating workweeks, or non-FLSA violations (PTO theft, final paycheck violations).</p>
+</BaseLayout>
