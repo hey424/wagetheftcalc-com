@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Wage Theft Calculator | wagetheftcalc.com';
+const description = 'Calculate unpaid wages, overtime damages, and liquidated damages from wage theft violations under the FLSA.';
+---
+<BaseLayout title={title} description={description}>
+  <h1>Wage Theft Calculator</h1>
+  <p>Estimate your recoverable wages and damages from wage theft violations including unpaid overtime, minimum wage violations, and off-the-clock work. Results are educational — consult an employment attorney for your specific case.</p>
+  <form id="calc">
+    <label for="violation">Type of Wage Violation</label>
+    <select id="violation">
+      <option value="overtime" selected>Unpaid Overtime (time-and-a-half not paid)</option>
+      <option value="minimum_wage">Minimum Wage Violation</option>
+      <option value="off_clock">Off-the-Clock Work</option>
+      <option value="tip_theft">Tip Theft / Tip Pool Violation</option>
+      <option value="misclassification">Misclassification (IC or exempt when non-exempt)</option>
+    </select>
+
+    <label for="hourly_rate">Regular Hourly Rate ($)</label>
+    <input type="number" id="hourly_rate" min="1" step="0.01" value="18.00" required />
+
+    <label for="unpaid_hours">Weekly Unpaid Hours (overtime hours or off-clock hours)</label>
+    <input type="number" id="unpaid_hours" min="0" step="0.5" value="5" required />
+
+    <label for="weeks">Number of Weeks (lookback period)</label>
+    <input type="number" id="weeks" min="1" max="312" value="52" required />
+    <p style="font-size:.875rem;color:#555;margin-top:-.5rem">FLSA: 2-year lookback (3 years if willful). Many states allow longer.</p>
+
+    <label for="state_law">Apply State Law Enhancement?</label>
+    <select id="state_law">
+      <option value="none" selected>No — use federal FLSA only</option>
+      <option value="double">Double damages (e.g., CA, NY, IL)</option>
+      <option value="triple">Triple damages (e.g., MA)</option>
+    </select>
+
+    <button type="submit">Calculate Damages</button>
+  </form>
+  <div id="result"></div>
+
+  <h2>What Is Wage Theft?</h2>
+  <p>Wage theft includes any practice where an employer fails to pay wages legally owed: unpaid overtime, minimum wage violations, illegal deductions, tip theft, off-the-clock work demands, and misclassification of employees as independent contractors or exempt employees.</p>
+
+  <script>
+    document.getElementById('calc').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const violation = document.getElementById('violation').value;
+      const rate = parseFloat(document.getElementById('hourly_rate').value) || 0;
+      const hours = parseFloat(document.getElementById('unpaid_hours').value) || 0;
+      const weeks = parseInt(document.getElementById('weeks').value) || 0;
+      const stateLaw = document.getElementById('state_law').value;
+
+      let weeklyShortfall = 0;
+      let description = '';
+
+      if (violation === 'overtime') {
+        const otRate = rate * 1.5;
+        weeklyShortfall = hours * otRate;
+        description = 'Unpaid overtime at 1.5× rate';
+      } else if (violation === 'minimum_wage') {
+        const fedMin = 7.25;
+        const diff = Math.max(0, fedMin - rate);
+        weeklyShortfall = diff * hours;
+        description = 'Federal minimum wage shortfall ($7.25/hr)';
+      } else if (violation === 'off_clock') {
+        weeklyShortfall = hours * rate;
+        description = 'Off-the-clock hours at regular rate';
+      } else if (violation === 'tip_theft') {
+        weeklyShortfall = hours * rate;
+        description = 'Stolen tips estimated at regular rate';
+      } else {
+        weeklyShortfall = hours * rate * 1.5;
+        description = 'Misclassification — estimated at OT rate';
+      }
+
+      const baseUnpaid = weeklyShortfall * weeks;
+      const liquidated = baseUnpaid; // FLSA doubles via liquidated
+      let total = baseUnpaid + liquidated;
+
+      if (stateLaw === 'double') total = baseUnpaid * 2;
+      else if (stateLaw === 'triple') total = baseUnpaid * 3;
+      else total = baseUnpaid * 2; // FLSA liquidated default
+
+      const fmt = n => '$' + n.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2});
+      document.getElementById('result').innerHTML =
+        '<strong>Estimated Total Recovery: ' + fmt(total) + '</strong>' +
+        '<br>Unpaid wages: ' + fmt(baseUnpaid) +
+        '<br>Liquidated/penalty damages: ' + fmt(total - baseUnpaid) +
+        '<br>Basis: ' + description +
+        '<br><em>Attorney fees and costs recoverable under FLSA. Actual recovery depends on jurisdiction, employer defenses, and statute of limitations. Not legal advice.</em>';
+    });
+  </script>
+</BaseLayout>
