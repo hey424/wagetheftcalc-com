@@ -1,10 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Contact';
-const description = 'Contact the editorial team.';
+const title = 'Contact | wagetheftcalc.com';
+const description = 'Contact the editorial team at wagetheftcalc.com with corrections, feedback, or questions about wage theft content.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>Contact</h1>
-  <p>For corrections, feedback, or questions, email <a href="mailto:hey@theclicklab.agency">hey@theclicklab.agency</a>.</p>
-  <p>We read every message but can&rsquo;t provide legal advice or respond to requests for case-specific analysis.</p>
+  <p>For corrections, feedback, or questions about content on wagetheftcalc.com, email us at <a href="mailto:hey@theclicklab.agency">hey@theclicklab.agency</a>. We read every message and aim to respond within five business days.</p>
+
+  <h2>What we can help with</h2>
+  <ul>
+    <li><strong>Factual corrections.</strong> If a page contains an outdated FLSA threshold, an incorrect exemption rule, or a calculation error, tell us the page URL and the specific issue.</li>
+    <li><strong>Methodology questions.</strong> Questions about how the damage formula works, what the liquidated damages rule covers, or how state multipliers are applied are welcome. The <a href="/methodology">methodology page</a> covers the full model.</li>
+    <li><strong>Broken links or technical issues.</strong> If a page is not loading or a link is broken, please let us know.</li>
+    <li><strong>Content suggestions.</strong> Suggestions for topics we haven&rsquo;t covered &mdash; specific state wage rules, tip credit mechanics, particular industries &mdash; are appreciated.</li>
+  </ul>
+
+  <h2>What we cannot help with</h2>
+  <p>We are not a law firm. We cannot evaluate your individual wage claim, advise whether your specific employer violated the FLSA, or help you draft a complaint. For guidance on your specific situation &mdash; whether your classification is correct, whether your claim is worth pursuing, how to navigate a DOL investigation &mdash; consult a licensed employment attorney. Most handle FLSA cases on contingency with no upfront fee and offer free consultations. The DOL Wage and Hour Division at <a href="https://www.dol.gov/agencies/whd" target="_blank" rel="noopener">dol.gov/agencies/whd</a> also accepts free complaints without requiring legal representation.</p>
 </BaseLayout>

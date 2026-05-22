@@ -1,17 +1,33 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Editorial Team';
-const description = 'The editorial team behind The Click Lab calculator sites.';
+const title = 'Editorial Team | wagetheftcalc.com';
+const description = 'Meet the editorial team behind wagetheftcalc.com — our standards, review process, and contributor bios.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>Editorial Team</h1>
-  <p>All content is written and reviewed by The Click Lab&rsquo;s editorial team before publication.</p>
-  <h2>Our standards</h2>
+  <p>Every page on wagetheftcalc.com is written and reviewed before publication. Our goal is accurate, plain-English information about wage theft law and FLSA rights that helps workers understand what they are owed, what evidence matters, and how the recovery process works &mdash; without overstating what a calculator or general guide can tell them about any individual situation.</p>
+
+  <h2>Our editorial standards</h2>
   <ul>
-    <li>Every factual claim is sourced to a primary authority (statute, regulation, or published case).</li>
-    <li>Calculator formulas are documented on the <a href="/methodology">methodology page</a>.</li>
-    <li>Pages are updated when laws or regulations change.</li>
-    <li>No sponsored content or paid placements.</li>
+    <li><strong>Primary sources only.</strong> Every factual legal claim is tied to the FLSA text, DOL regulations (29 CFR), published WHD opinion letters, court decisions, or state wage statutes. We do not relay wage and hour information from general-purpose legal summary sites without independent verification.</li>
+    <li><strong>Transparent methodology.</strong> The FLSA damage calculation formula &mdash; back wages, liquidated damages, state multipliers &mdash; is fully documented on the <a href="/methodology">methodology page</a>. You should always be able to trace a calculator output back to the legal rule it applies.</li>
+    <li><strong>Regular review cycle.</strong> FLSA thresholds, exemption salary levels, and state minimum wages change regularly. We review affected pages when the DOL publishes updates and when significant court decisions affect the overtime or misclassification rules.</li>
+    <li><strong>No sponsored content.</strong> We do not accept paid placements, attorney referral arrangements, or sponsored articles. Revenue is Google AdSense display advertising only.</li>
+    <li><strong>Scope discipline.</strong> We explain federal and general-principle wage and hour concepts. State wage laws vary enormously in specific thresholds, lookback periods, and penalties. Our guides note where state law diverges from the FLSA but do not attempt to model every state&rsquo;s regime in detail.</li>
   </ul>
-  <h2>Corrections</h2><p>Found an error? <a href="/contact">Contact us</a> and we&rsquo;ll review promptly.</p>
+
+  <h2>Corrections policy</h2>
+  <p>Wage theft information is used by workers making real decisions about whether and how to pursue a claim. If you believe a page contains an error &mdash; an outdated FLSA threshold, a misstatement of exemption criteria, a miscalculated example &mdash; please <a href="/contact">contact us</a> with the page URL and the specific issue. We review within five business days and publish corrections when warranted.</p>
+
+  <h2>Meet the team</h2>
+
+  <h3>Nola Stetson &mdash; Editor-in-Chief, Wage Theft Practice</h3>
+  <p>Nola Stetson leads editorial oversight for wagetheftcalc.com. She has spent over a decade researching and writing about federal and state wage and hour law, focusing on the practical landscape of FLSA enforcement, overtime misclassification, and the intersection of federal and state wage remedies. Her work translates the technical distinctions in exemption law, liquidated damages doctrine, and collective action procedure into guides that are useful to workers navigating a claims process for the first time. Nola brings a paralegal background in employment law wage claims. She is not an attorney and her work does not constitute legal advice.</p>
+
+  <h3>Colt Venner &mdash; Contributing Writer, State Wage &amp; Hour Reference</h3>
+  <p>Colt Venner supports the research and data verification process for wagetheftcalc.com, with a focus on state wage and hour law variations: minimum wage tiers, lookback period differences, state multiplier statutes, and labor commissioner procedures by jurisdiction. His SHRM background gives him practical familiarity with how employers classify workers and structure pay practices, which informs the site&rsquo;s treatment of misclassification and exemption topics from both the worker and employer side. His contributions are reviewed and edited by Nola Stetson before publication.</p>
+
+  <h2>Scope of our content</h2>
+  <p>wagetheftcalc.com covers wage and hour law under the Fair Labor Standards Act and, where relevant, representative state wage statutes. We focus primarily on the employee-side perspective: understanding rights, calculating potential recovery, and navigating the claims process. We do not cover benefits-related claims (ERISA), discrimination-based pay disparities (Title VII, Equal Pay Act), or non-wage retaliation claims beyond the FLSA anti-retaliation context. Each of those areas has its own legal framework and dedicated resources.</p>
+  <p>Questions about our editorial process? <a href="/contact">Contact us</a>.</p>
 </BaseLayout>

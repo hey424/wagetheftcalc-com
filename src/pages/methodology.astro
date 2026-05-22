@@ -1,30 +1,42 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const title = 'Calculator Methodology | wagetheftcalc.com';
-const description = 'How the wage theft calculator estimates unpaid wages and liquidated damages under the FLSA.';
+const description = 'How the wage theft calculator estimates unpaid wages and liquidated damages under the FLSA and state law.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>Calculator Methodology</h1>
+  <p><em>Reviewed by Nola Stetson (NS), Editor-in-Chief &mdash; Wage Theft Practice. Updated May 2026.</em></p>
 
-  <h2>Unpaid Wage Calculation</h2>
-  <p>We multiply weekly unpaid hours by the applicable rate for the violation type:</p>
+  <p>This page documents every step of the wage theft damage estimate: how the calculator determines the unpaid wage shortfall for each violation type, how liquidated damages are applied, what state law multipliers represent, and where the estimate diverges from what a court or DOL investigation would calculate.</p>
+
+  <h2>Step 1: Weekly Unpaid Wage Shortfall</h2>
+  <p>The calculator multiplies weekly unpaid hours by the applicable rate for the violation type selected:</p>
   <ul>
-    <li><strong>Overtime:</strong> Regular rate × 1.5 (FLSA requires time-and-a-half for hours over 40/week)</li>
-    <li><strong>Minimum wage:</strong> Difference between $7.25/hr and actual rate paid (federal floor — state minimums vary)</li>
-    <li><strong>Off-the-clock:</strong> Regular hourly rate (at minimum; OT rate if total hours exceed 40)</li>
-    <li><strong>Tip theft:</strong> Estimated at regular rate as a floor</li>
-    <li><strong>Misclassification:</strong> Estimated at OT rate for missed overtime</li>
+    <li><strong>Unpaid overtime:</strong> Regular hourly rate &times; 1.5. The FLSA requires time-and-a-half pay for all hours worked over 40 in a workweek for non-exempt employees. The full 1.5&times; overtime rate is used rather than just the 0.5&times; premium because FLSA recovery includes the full hourly amount for those hours, not only the premium portion that was withheld.</li>
+    <li><strong>Minimum wage violation:</strong> Difference between $7.25/hour (the federal minimum) and the actual rate paid, multiplied by weekly hours. This models the federal floor only. If your state or city minimum wage is higher than $7.25, the actual shortfall is larger than this calculator shows. State minimum wages are not individually modeled.</li>
+    <li><strong>Off-the-clock work:</strong> Regular hourly rate times unpaid hours. If off-the-clock work pushes total weekly hours above 40, those hours should be entered as an overtime violation, since they are owed at 1.5&times; under the FLSA.</li>
+    <li><strong>Tip theft:</strong> Stolen tips are estimated at the regular hourly rate as a floor. If you have records of actual tips taken, use the true tip amount rather than an hours proxy.</li>
+    <li><strong>Misclassification:</strong> Estimated at 1.5&times; the regular rate for missed overtime. Misclassification cases often involve additional damages &mdash; denied benefits, tax exposure, employer&rsquo;s FICA share &mdash; not modeled here.</li>
   </ul>
-  <p>Weekly shortfall is multiplied by the number of weeks in the lookback period.</p>
+  <p>Weekly shortfall is multiplied by the number of weeks in your selected lookback period to produce total back wages.</p>
 
-  <h2>Liquidated Damages</h2>
-  <p>The FLSA defaults to liquidated damages equal to the unpaid wages (2× total). We apply this unless a state law enhancement is selected:</p>
+  <h2>Step 2: Liquidated Damages</h2>
+  <p>Under FLSA &sect;16(b), an employer who fails to pay required wages is liable for an additional equal amount as <strong>liquidated damages</strong> &mdash; unless the employer demonstrates both (a) good faith and (b) a reasonable belief their practices complied with the law. Both elements are required; good faith alone is not a defense. The liquidated damages defense is rarely successful. The calculator applies the full equal-amount liquidated damages by default.</p>
+  <p>State law multipliers reflect stronger statutory penalties:</p>
   <ul>
-    <li>FLSA default: 2× unpaid wages</li>
-    <li>Double damages states (CA, NY, IL): 2× unpaid wages</li>
-    <li>Triple damages states (MA): 3× unpaid wages</li>
+    <li><strong>FLSA default (2&times; total):</strong> Back wages + equal liquidated damages = 2&times; unpaid wages. Applied when no state enhancement is selected.</li>
+    <li><strong>Double damages states (CA, NY, IL):</strong> California Labor Code &sect;1194, New York Labor Law &sect;198, and the Illinois Wage Payment and Collection Act all provide for 2&times; unpaid wages as a penalty, broadly consistent with the FLSA default. Selected when applicable state law is chosen.</li>
+    <li><strong>Triple damages states (MA):</strong> The Massachusetts Wage Act (MGL c.149 &sect;150) mandates treble damages &mdash; 3&times; the unpaid wages &mdash; as a non-discretionary remedy. No good-faith defense is available under the Massachusetts Wage Act. This is one of the most plaintiff-favorable wage statutes in the country.</li>
   </ul>
 
-  <h2>Limitations</h2>
-  <p>This calculator does not account for: interest, attorney fees (recoverable under FLSA), state-specific minimum wages higher than $7.25, complex OT calculations for fluctuating workweeks, or non-FLSA violations (PTO theft, final paycheck violations).</p>
+  <h2>Known Limitations</h2>
+  <ul>
+    <li><strong>Attorney fees.</strong> FLSA &sect;16(b) makes reasonable attorney fees and costs mandatory for successful plaintiffs. These are separately recoverable and not included in the calculator output.</li>
+    <li><strong>State minimum wages.</strong> The minimum wage calculation uses the federal floor of $7.25/hour. States with higher minimums produce larger shortfalls than shown.</li>
+    <li><strong>Pre-judgment interest.</strong> Some courts award interest on unpaid wages in addition to liquidated damages; not modeled.</li>
+    <li><strong>Fluctuating workweek (FWW).</strong> Employers using the FWW method calculate overtime differently. FWW cases require a distinct calculation not handled here.</li>
+    <li><strong>Non-FLSA violations.</strong> Final paycheck violations, unlawful PTO forfeiture, and prevailing wage violations may be governed by state law only and are not modeled.</li>
+    <li><strong>Complex regular rate calculations.</strong> The regular rate for overtime purposes includes non-discretionary bonuses and certain other payments beyond base wages. If your compensation structure is complex, your actual overtime rate may be higher than the hourly rate you entered.</li>
+  </ul>
+  <p>Questions? <a href="/contact">Contact us</a>.</p>
 </BaseLayout>

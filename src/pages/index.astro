@@ -1,11 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Wage Theft Calculator | wagetheftcalc.com';
-const description = 'Calculate unpaid wages, overtime damages, and liquidated damages from wage theft violations under the FLSA.';
+const title = 'Wage Theft Calculator | Estimate Unpaid Wages & Damages';
+const description = 'Calculate unpaid wages, overtime damages, and liquidated damages from wage theft violations under the FLSA and state law. Free educational tool with plain-language guides.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>Wage Theft Calculator</h1>
-  <p>Estimate your recoverable wages and damages from wage theft violations including unpaid overtime, minimum wage violations, and off-the-clock work. Results are educational — consult an employment attorney for your specific case.</p>
+  <p><em>Reviewed by Nola Stetson (NS), Editor-in-Chief &mdash; Wage Theft Practice. Updated May 2026.</em></p>
+
+  <p>Wage theft is among the most common labor violations in the United States, affecting an estimated millions of workers annually across industries from restaurant service to retail management to construction. It encompasses any practice where an employer fails to pay wages legally owed: unpaid overtime, minimum wage violations, illegal deductions, tip theft, off-the-clock work demands, and misclassification of employees as independent contractors or exempt workers to avoid overtime and benefit obligations. The Fair Labor Standards Act (FLSA) provides a federal framework for recovery, and most states provide additional, often stronger, remedies.</p>
+  <p>This calculator estimates your potential recovery under the FLSA and, optionally, under state law multipliers that increase damages beyond the federal baseline. Results are educational &mdash; consult an employment attorney for your specific case.</p>
+
+  <h2>Run the estimate</h2>
+  <p>Select your violation type, enter your hourly rate and unpaid hours, and choose your lookback period. The FLSA allows recovery for two years of violations (three years for willful violations). Many states allow three to six years. Use the state law enhancement to see how your jurisdiction&rsquo;s multiplier affects the total.</p>
+
   <form id="calc">
     <label for="violation">Type of Wage Violation</label>
     <select id="violation">
@@ -37,8 +44,19 @@ const description = 'Calculate unpaid wages, overtime damages, and liquidated da
   </form>
   <div id="result"></div>
 
-  <h2>What Is Wage Theft?</h2>
-  <p>Wage theft includes any practice where an employer fails to pay wages legally owed: unpaid overtime, minimum wage violations, illegal deductions, tip theft, off-the-clock work demands, and misclassification of employees as independent contractors or exempt employees.</p>
+  <h2>How wage theft damages are calculated</h2>
+  <p>Recovery under the FLSA has two components. <strong>Back wages</strong> are the actual unpaid amounts &mdash; overtime premiums not paid, minimum wage shortfalls, off-the-clock hours at the applicable rate. <strong>Liquidated damages</strong> are an additional penalty equal to the back wages owed, effectively doubling your recovery, unless the employer can demonstrate both good faith and a reasonable belief their pay practices were lawful. State law multipliers in some jurisdictions go further: California, New York, and Illinois typically provide 2&times; unpaid wages; Massachusetts mandates treble damages (3&times;) with no good-faith defense available to employers.</p>
+  <p>Attorney fees are separately recoverable under FLSA &sect;16(b), which means employment attorneys commonly take wage theft cases on contingency even when individual damages are modest. If your per-person amount is small but the violation affected many coworkers, a collective action can aggregate claims to make the case economically viable.</p>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/guides/how-wage-theft-claims-work">How wage theft claims work &mdash; DOL, private suit, and state agency options</a></li>
+    <li><a href="/guides/flsa-overtime-rules">FLSA overtime rules explained</a></li>
+    <li><a href="/guides/what-to-do-after-wage-theft">What to do after wage theft</a></li>
+    <li><a href="/guides/wage-theft-misconceptions">Common misconceptions about wage theft</a></li>
+    <li><a href="/methodology">Calculator methodology</a></li>
+    <li><a href="/faq">Frequently asked questions</a></li>
+  </ul>
 
   <script>
     document.getElementById('calc').addEventListener('submit', function(e) {

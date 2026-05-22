@@ -1,21 +1,46 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const title = 'FLSA Overtime Rules Explained | wagetheftcalc.com';
-const description = 'A plain-English guide to FLSA overtime requirements, the 40-hour threshold, and common exemptions.';
+const description = 'A plain-English guide to FLSA overtime requirements, the 40-hour threshold, common exemptions, and regular rate of pay.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>FLSA Overtime Rules Explained</h1>
+  <p><em>Reviewed by Nola Stetson (NS), Editor-in-Chief &mdash; Wage Theft Practice. Updated May 2026.</em></p>
+
+  <p>The overtime provisions of the Fair Labor Standards Act are among the most litigated areas of employment law, in part because employers frequently misapply the exemptions. Understanding the basic rule and where the exceptions actually apply is essential for evaluating whether your overtime rights have been violated.</p>
+
   <h2>The Basic Rule</h2>
-  <p>Non-exempt employees must receive 1.5× their regular rate of pay for all hours worked over 40 in a single workweek. "Workweek" is a fixed recurring 168-hour period — employers set the start day.</p>
-  <h2>Who Is Exempt?</h2>
-  <p>The FLSA's "white collar" exemptions cover bona fide executive, administrative, and professional employees who are paid on a salary basis of at least $684/week (the 2024 threshold; litigation ongoing regarding 2024 DOL rule increases). Job title alone does not create an exemption — the actual job duties must meet specific criteria.</p>
-  <h2>Regular Rate of Pay</h2>
-  <p>The regular rate includes most forms of compensation: hourly wages, non-discretionary bonuses, commissions, and shift differentials. It excludes discretionary bonuses, gifts, and certain other payments. Overtime is calculated on the regular rate, not just base wages.</p>
-  <h2>Common Misclassification Traps</h2>
+  <p>Non-exempt employees must receive at least 1.5 times their regular rate of pay for all hours worked over 40 in a single workweek. Key definitions:</p>
   <ul>
-    <li>Assistant managers who primarily perform non-managerial tasks</li>
-    <li>IT workers classified as "computer professionals" who don't meet the duties test</li>
-    <li>"Highly compensated" exemption misapplied to employees earning under $107,432/year</li>
-    <li>Inside sales employees misclassified as exempt outside sales</li>
+    <li><strong>Workweek:</strong> A fixed, recurring 168-hour period (seven consecutive 24-hour days). Employers set the start day and cannot change it retroactively to avoid overtime liability. Hours cannot be averaged across two weeks &mdash; if you work 50 hours in week one and 30 in week two, you are owed 10 hours of overtime for week one, period.</li>
+    <li><strong>Hours worked:</strong> All time the employer requires or allows the employee to work. This includes pre-shift preparation, post-shift cleanup, required training, and work performed during unpaid meal breaks when the employee was not completely relieved of duties.</li>
+    <li><strong>Regular rate:</strong> Not just your base wage &mdash; see below.</li>
   </ul>
+
+  <h2>The Regular Rate of Pay</h2>
+  <p>Overtime must be calculated on the <strong>regular rate</strong>, which includes most forms of compensation beyond base wages. The FLSA requires adding to the regular rate: non-discretionary bonuses (bonuses tied to production, attendance, or performance metrics that employees expect to receive), commissions, on-call pay, shift differentials, and most other supplemental pay.</p>
+  <p>Excluded from the regular rate: discretionary bonuses announced at or near payment (a Christmas bonus given at the employer&rsquo;s sole discretion), gifts, vacation pay, sick pay, and certain other categories. The distinction between discretionary and non-discretionary bonuses is frequently litigated; a bonus paid on a regular schedule for meeting a defined metric is almost certainly non-discretionary even if the employer calls it discretionary.</p>
+  <p>Practical implication: if you received a $1,000 quarterly bonus while working overtime hours in the same quarter, your overtime rate for those hours should have been calculated on a base that includes the bonus allocated across the quarter&rsquo;s hours. Many employers ignore this and calculate overtime only on base wages, understating every overtime payment.</p>
+
+  <h2>Who Is Exempt from Overtime?</h2>
+  <p>The FLSA&rsquo;s &ldquo;white collar&rdquo; exemptions cover bona fide executive, administrative, and professional employees. Three requirements must all be met for an exemption to apply:</p>
+  <ol>
+    <li><strong>Salary basis:</strong> The employee must be paid on a salary basis &mdash; a predetermined amount not subject to reduction based on hours worked. An employee who has their pay docked for working fewer than 40 hours is not on a true salary basis and may not be exempt.</li>
+    <li><strong>Salary level:</strong> The salary must meet the DOL&rsquo;s minimum threshold. As of the most recent DOL rule (subject to ongoing litigation as of 2026), the minimum weekly salary is $684/week ($35,568/year) for standard white-collar exemptions and $107,432/year for the highly compensated employee (HCE) exemption. Employees earning below these levels cannot be exempt regardless of job duties.</li>
+    <li><strong>Duties test:</strong> The employee must primarily perform duties that qualify under the executive, administrative, or professional definitions in the DOL regulations (29 CFR Part 541). Job title does not create an exemption; actual primary duties do.</li>
+  </ol>
+  <p>The most common exemption errors employers make:</p>
+  <ul>
+    <li><strong>Executive exemption:</strong> An assistant manager who primarily stocks shelves, operates a register, or performs the same tasks as non-exempt hourly workers fails the duties test. The exemption requires that management be the employee&rsquo;s primary duty and that the employee have genuine authority to hire, fire, or meaningfully influence personnel decisions.</li>
+    <li><strong>Administrative exemption:</strong> Requires the employee to exercise discretion and independent judgment with respect to matters of significance. A customer service employee following a script, or a data entry employee following procedures without discretion, does not qualify even if paid a salary.</li>
+    <li><strong>Computer professional exemption:</strong> Requires work involving high-level systems analysis, design, or development. Help desk workers, system administrators who follow established procedures, and general IT support staff typically do not meet the duties test.</li>
+    <li><strong>Outside sales exemption:</strong> Requires that the employee&rsquo;s primary duty is making sales and that they regularly work away from the employer&rsquo;s place of business. Inside sales representatives who work primarily by phone from an office do not qualify.</li>
+  </ul>
+
+  <h2>Other Common Overtime Violations</h2>
+  <p><strong>Comp time in lieu of overtime pay.</strong> Private-sector employers cannot substitute compensatory time off (&ldquo;comp time&rdquo;) for overtime pay. Only state and local government employers can use comp time arrangements. A private employer that gives you time off instead of paying 1.5&times; for overtime is violating the FLSA.</p>
+  <p><strong>Averaging hours across weeks.</strong> The FLSA calculates overtime on a per-workweek basis. An employer cannot average 35 hours one week and 50 hours the next to claim no overtime was owed. Each week stands alone.</p>
+  <p><strong>Altered time records.</strong> Systematically reducing recorded hours below actual hours worked is a willful violation that extends the lookback period to three years and strengthens a liquidated damages claim.</p>
+
+  <p>See the <a href="/case-types">types of wage theft</a> page for more on overtime and other violations, or use the <a href="/">calculator</a> to estimate your potential recovery.</p>
 </BaseLayout>
